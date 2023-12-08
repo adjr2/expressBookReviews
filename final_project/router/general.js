@@ -22,22 +22,13 @@ public_users.post("/register", (req, res) => {
 
 // Get the book list available in the shop
 // public_users.get("/", function (req, res) {
-//   let bookNames = [];
-//   for (let key in books) {
-//     bookNames.push(books[key]["title"]);
-//   }
-//   console.log(bookNames);
-//   res.status(200).json({ message: bookNames });
+//   res.status(200).send(JSON.stringify(books));
 // });
 
 // using Promise
 function allBooks() {
   return new Promise((resolve, reject) => {
-    let bookNames = [];
-    for (let key in books) {
-      bookNames.push(books[key]["title"]);
-    }
-    resolve(bookNames);
+    resolve(books);
   });
 }
 
